@@ -123,6 +123,7 @@ tidy(methb_glm, conf.int = T) |>
   #filter(term == 'pqmgkgday_cent') |>
   select(-c(group, df, std.error, statistic))
 performance::r2(methb_glm)
+VarCorr(methb_glm)
 
 # Methb vs. blood-stage tx
 main_methb_cent_ext_cq <- main_methb_cent_ext |>

@@ -149,6 +149,7 @@ tidy(coxme_ext, exponentiate = T) |>
   select(term, estimate, conf.low, conf.high, statistic, p.value) |>
   mutate_if(is.numeric, round, digits = 4) |>
   tibble()
+coxme_ext$vcoef$studysite[2, 2] |> sqrt() |> exp() # Exponentiated SD of aHRs
 
 coxme_ext_complete <- coxme(Surv(dlast120_pq, outcome7to120_pq) ~
                      log2_methb7_cent +
